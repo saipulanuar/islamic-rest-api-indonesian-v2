@@ -101,7 +101,8 @@ Islamic Api V2 adalah Api yang berisi data2 islami yang lebih lengkap daripada v
 | Kisah Nabi            | Menampilkan Data Kisah Para Nabi                  | nabi            | api/data/kisahnabi?nabi={nama nabi}                        |
 | Hadith                | Menampilkan Data Hadith2 Rasulullah               | kitab & nomor   | api/data/hadith?kitab={nama kitab}&nomor={nomor hadith}    |
 | Surah                 | Menampilkan Data List Surah                       | -               | api/data/quran                                             |
-| Qur'an                | Menampilkan Data Qur'an                           | ayat & surah    | api/data/quran?surah={nomor surah}&ayat={nomor ayat}       |
+| Detail Surah          | Menampilkan Data Detail Surah                     | surah           | api/data/quran?surah={nomor surah}                         |
+| Qur'an                | Menampilkan Data Qur'an                           | surah & ayat    | api/data/quran?surah={nomor surah}&ayat={nomor ayat}       |
 | Jadwal Shalat         | Menampilkan Jadwal Shalat Indonesia               | kota            | api/data/jadwalshalat?kota={nama kota}                     |
 | Random AsmaulHusna    | Menampilkan Asmaul Husna Secara Random            | -               | api/data/asmaulhusna                                       |
 | Random Quotes Islami  | Menampilkan Quotes2 Islami Secara Random          | -               | api/data/quotes                                            |

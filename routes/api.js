@@ -98,6 +98,11 @@ router.get('/data/quran', async (req, res) => {
             .then(response => response.json())
             .then(data => res.json(data))
             .catch(() => res.json(loghandler.error));
+    } else if (surah) {
+        return fetch(encodeURI(`https://alquran-apiii.vercel.app/surah/${surah}`))
+            .then(response => response.json())
+            .then(data => res.json(data))
+            .catch(() => res.json(loghandler.error));
     } else {
         return fetch(encodeURI('https://alquran-apiii.vercel.app/surah'))
             .then(response => response.json())
