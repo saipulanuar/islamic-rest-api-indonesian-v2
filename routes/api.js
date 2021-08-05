@@ -22,8 +22,7 @@ const loghandler = {
 
 
 router.get('/data/kisahnabi', async (req, res) => {
-    // const { nabi } = req.query;
-    let nabi = req.query.nabi;
+    const { nabi } = req.query;
 
     if (!nabi) return res.json({ status: false, creator: 'Zhirrr', message: 'masukan parameter nabi' });
 
