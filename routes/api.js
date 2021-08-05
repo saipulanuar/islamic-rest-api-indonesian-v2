@@ -93,20 +93,17 @@ router.get('/data/masjid/list-provinsi', async (req, res) =>
 router.get('/data/quran', async (req, res) => {
     const { surah, ayat } = req.query;
 
-    if (!surah) return res.json({ status: false, creator: 'Zhirrr', message: 'masukan parameter surah' });
-    if (!ayat) return res.json({ status: false, creator: 'Zhirrr', message: 'masukan parameter ayat' });
-
-    return fetch(encodeURI(`https://alquran-apiii.vercel.app/surah/${surah}/${ayat}`))
-        .then(response => response.json())
-        .then((data) => {
-            const result = data;
-            res.json({
-                result,
-            });
-        })
-        .catch(() => {
-            res.json(loghandler.error);
-        });
+    if (surah && ayat) {
+        return fetch(encodeURI(`https://alquran-apiii.vercel.app/surah/${surah}/${ayat}`))
+            .then(response => response.json())
+            .then(data => res.json(data))
+            .catch(() => res.json(loghandler.error));
+    } else {
+        return fetch(encodeURI('https://alquran-apiii.vercel.app/surah'))
+            .then(response => response.json())
+            .then(data => res.json(data))
+            .catch(() => res.json(loghandler.error));
+    }
 });
 
 router.get('/data/json/quran', async (req, res) =>
