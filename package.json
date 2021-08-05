@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "prepare": "husky install",
     "lint": "eslint . --fix"
   },
   "repository": {
@@ -52,13 +53,8 @@
     "eslint-config-airbnb-base": "12.1.0",
     "eslint-config-mfe": "0.1.2",
     "eslint-plugin-import": "2.8.0",
-    "husky": "0.14.3",
-    "lint-staged": "6.1.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "husky": "^7.0.0",
+    "lint-staged": "^6.1.0"
   },
   "lint-staged": {
     "*.js": [
