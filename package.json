@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint . --fix"
   },
   "repository": {
     "type": "git",
@@ -27,10 +27,10 @@
     "base-64": "^1.0.0",
     "base32": "0.0.6",
     "chalk": "^4.1.0",
-    "cheerio": "^1.0.0-rc.5",
+    "cheerio": "^1.0.0-rc.10",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "moment": "^2.29.1",
     "mongodb": "^3.6.3",
     "monk": "^7.3.3",
@@ -45,5 +45,25 @@
     "ytdl-core": "^4.4.5",
     "ytpl": "^2.0.5"
   },
-  "homepage": "https://github.com/Zhirrr/islamic-rest-api-indonesian-v2#readme"
+  "homepage": "https://github.com/Zhirrr/islamic-rest-api-indonesian-v2#readme",
+  "devDependencies": {
+    "babel-eslint": "8.2.1",
+    "eslint": "4.17.0",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-config-mfe": "0.1.2",
+    "eslint-plugin-import": "2.8.0",
+    "husky": "0.14.3",
+    "lint-staged": "6.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
 }
