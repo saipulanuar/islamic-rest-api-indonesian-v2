@@ -1,24 +1,24 @@
-__path = process.cwd()
+const express = require('express');
 
-var express = require('express');
-var router = express.Router();
+const __path = process.cwd();
+const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.sendFile(__path + '/views/index.html')
-})
+    res.sendFile(`${__path}/views/index.html`);
+});
 
 router.get('/api', (req, res) => {
-    config = {
+    const config = {
         status: true,
         result: {
-            author : 'Zhirrr',
+            author: 'Zhirrr',
             github: 'Zhirrr',
             instagram: 'zhirr_ajalah',
             youtube: 'Gak Punya',
-            docs: 'https://github.com/Zhirrr/islamic-rest-api-indonesian-v2'
-        }
-    }
-    res.json(config)
-})
+            docs: 'https://github.com/Zhirrr/islamic-rest-api-indonesian-v2',
+        },
+    };
+    res.json(config);
+});
 
-module.exports = router
+module.exports = router;
